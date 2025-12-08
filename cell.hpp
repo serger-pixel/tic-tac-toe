@@ -4,12 +4,20 @@ enum class CellValue{
     CROSS
 };
 
+enum class CellId{
+    ONE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE
+};
+
 class Cell{
 public:
-    void draw(){
-        return;
-    }
-
     bool change(CellValue newValue){
         if (newValue != CellValue::EMPTY){
             return false;
@@ -18,10 +26,14 @@ public:
         return true;
     }
 
+
+
 private:
     CellValue value;
+    CellId id;
 
-    Cell(){
+    Cell(CellId _id){
+        id = _id;
         value = CellValue::EMPTY;
     }
 };
