@@ -35,14 +35,12 @@ public:
         return value;
     }
 
-
-
-private:
-    CellValue value;
-    CellId id;
-
     Cell(CellId _id){
         id = _id;
         value = CellValue::EMPTY;
     }
+    
+private:
+    CellValue value;
+    CellId id;
 };
