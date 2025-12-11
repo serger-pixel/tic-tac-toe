@@ -16,6 +16,11 @@ enum class CellId{
     NINE
 };
 
+CellId& operator++(CellId& id) {
+    id = static_cast<CellId>(static_cast<int>(id) + 1);
+    return id;
+}
+
 class Cell{
 public:
     bool change(CellValue newValue){
@@ -24,6 +29,10 @@ public:
         }
         value = newValue;
         return true;
+    }
+
+    CellValue getValue(){
+        return value;
     }
 
 
